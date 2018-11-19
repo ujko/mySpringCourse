@@ -18,7 +18,7 @@ public class CarRepositoryMemory implements ICarRepository {
     public void createCars() {
         addCar(new Car("BMW", "Red"));
         addCar(new Car("Jaguar", "Silver"));
-        addCar(new Car("BMW", "Green"));
+        addCar(new Car("Syrenka", "Green"));
     }
 
     private int createId() {

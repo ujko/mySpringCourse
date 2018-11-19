@@ -13,24 +13,11 @@
 <body>
 <div class="container">
     <h1 class="jumbotron">All Cars</h1>
-    <table class="table">
-        <thead>
-            <tr>
-                <td>Id</td>
-                <td>Name</td>
-                <td>color</td>
-                <td>show</td>
-            </tr>
-        </thead>
-        <tbody th:each="car : ${cars}">
-            <tr>
-                <td th:text="${car.id}"/>
-                <td th:text="${car.name}"/>
-                <td th:text="${car.color}"/>
-                <td><a th:href="${'/car?id='+car.id}"/>show</td>
-            </tr>
-        </tbody>
-    </table>
+    <div>
+        <p th:text="'Car Id: '+${car.id}"/>
+        <p th:text="'Car Name: '+${car.name}"/>
+        <p th:text="'Car Color: '+${car.color}"/>
+    </div>
 
 </div>
 

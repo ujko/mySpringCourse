@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import pl.ujo.kursSpring.model.Car;
 import pl.ujo.kursSpring.services.CarService;
 
@@ -18,6 +19,13 @@ public class CarController {
     @RequestMapping("/")
     public String getIndex() {
         return "index";
+    }
+
+    @RequestMapping("/car")
+    public String getCar(@RequestParam("id") Integer id, Model model) {
+        Car car = carService.getCarById(id);
+        model.addAttribute("car", car);
+        return "car";
     }
 
     @RequestMapping("/allcars")
